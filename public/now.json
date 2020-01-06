@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "alias": "matt9663-fitscribe-app",
+  "name": "fitscribe-app",
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/.*", "dest": "index.html" }
+  ]
+}

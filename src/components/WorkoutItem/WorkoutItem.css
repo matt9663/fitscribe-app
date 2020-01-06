@@ -1,0 +1,16 @@
+tr {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+.exercise-row:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.exercise-row:nth-child(odd) {
+  background-color:white;
+}
+

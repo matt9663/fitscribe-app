@@ -1,0 +1,24 @@
+details {
+  width: 90%;
+  margin: 3% 5%;
+  border: 2px solid #dddddd;
+}
+
+details > summary {
+  border-bottom: 1px solid black;
+  padding: 20px;
+  background-color: #dddddd;
+}
+
+table {
+  width: 100%
+}
+
+.add-workout-button {
+  margin: 0 5%;
+  text-decoration: none;
+  padding: 20px;
+  border: 2px solid #dddddd;
+  border-radius: 5px;
+  background-color: lightsteelblue;
+}

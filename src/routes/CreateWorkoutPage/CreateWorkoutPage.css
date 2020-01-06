@@ -1,0 +1,43 @@
+form {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  align-items: center;
+}
+
+.exercise-inputs {
+  display: flex;
+  width: 100%
+}
+
+.exercise-inputs > input {
+  margin: 2% 2%;
+  border: 2px solid #dddddd;
+  padding: 1%;
+}
+
+.exercise-inputs > span {
+  margin: 2% 0;
+  padding: 1%
+}
+
+.exercise-inputs > input::placeholder {
+  font-size: 12px;
+}
+
+.exercise-inputs > label {
+  display: none;
+}
+
+.liftName {
+  width: 70%
+}
+.weight {
+  width: 20%;
+}
+.reps {
+  width: 45px;
+}
+.sets {
+  width: 45px;
+}

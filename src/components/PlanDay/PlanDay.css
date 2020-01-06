@@ -1,0 +1,26 @@
+.plan-day {
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  width: 90%;
+  margin: 3% 5%;
+}
+
+.completed {
+  background-color: rgba(215, 250, 215, 0.863);
+}
+
+.plan-day-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0% 1%;
+  width: 98%;
+}
+
+.completed-toggle {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
