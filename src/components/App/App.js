@@ -9,6 +9,8 @@ import WorkoutsListPage from '../../routes/WorkoutsListPage/WorkoutsListPage';
 import CreateWorkoutPage from '../../routes/CreateWorkoutPage/CreateWorkout'
 import ExercisesListPage from '../../routes/ExercisesListPage/ExercisesListPage.js'
 import PlanWorkoutPage from '../../routes/PlanWorkoutPage/PlanWorkoutPage.js'
+import LoginPage from '../../routes/LoginPage/LoginPage'
+import RegisterUserPage from '../../routes/RegisterUserPage/RegisterUserPage';
 
 function App() {
   return (
@@ -21,6 +23,14 @@ function App() {
           exact
           path='/'
           component={Dashboard}
+        />
+        <Route
+          path='/login'
+          component={LoginPage}
+        />
+        <Route
+          path='/register'
+          component={RegisterUserPage}
         />
         <Route
           path='/workouts'

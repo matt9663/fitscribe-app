@@ -1,0 +1,7 @@
+.group {
+  margin: 2% 0;
+}
+
+.group > label {
+  display: none;
+}
