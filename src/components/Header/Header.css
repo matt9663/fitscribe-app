@@ -24,3 +24,10 @@
 .Header a:hover {
   cursor: pointer;
 }
+
+.nav-functions {
+  display: flex;
+  width: 68%;
+  justify-content: space-evenly;
+  
+}

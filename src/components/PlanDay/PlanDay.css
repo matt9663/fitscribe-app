@@ -2,7 +2,7 @@
   border: 1px solid #dddddd;
   border-radius: 5px;
   width: 90%;
-  margin: 3% 5%;
+  margin: 3% 0;
 }
 
 .completed {
@@ -14,8 +14,8 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin: 0% 1%;
-  width: 98%;
+  margin: 0% 3%;
+  width: 94%;
 }
 
 .completed-toggle {
