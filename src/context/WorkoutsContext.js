@@ -45,7 +45,6 @@ export class WorkoutsProvider extends Component {
       setError: this.setError,
       clearError: this.clearError,
       addWorkout: this.addWorkout,
-      setWeek: this.setWeek
     }
     return (
       <WorkoutsContext.Provider value={value}>

@@ -5,35 +5,30 @@ import ExerciseItem from '../../components/ExerciseItem/ExerciseItem'
 
 export default class ExercisesListPage extends Component {
   state = {
-    exercises: [],
-    muscle_groups: [],
+    allExercises: [],
+    filteredExercises: [],
     error: null
   }
 
   componentDidMount() {
     ExercisesApiService.getExercises()
-      .then(res => this.setState({ exercises: res}))
+      .then(res => this.setState({ allExercises: res, filteredExercises: res }))
       .catch(res => this.setState({ error: res.error }))
   }
 
-  setFilterOptions = (e) => {
-    let allExercises  = this.state.exercises
-    console.log(allExercises)
-    const allMuscleGroups = allExercises.map(exercise => exercise.muscle_group)
-    const dedupedMuscleGroups = new Set(allMuscleGroups)
-    this.setState({muscle_groups: dedupedMuscleGroups})
-  }
-
   renderFilterOptions() {
-    let muscleGroups = ['All', ...this.state.muscle_groups]
+    let { allExercises } = this.state
+    let allMuscleGroups = allExercises.map(exercise => exercise.muscle_group)
+    let dedupedMuscleGroups = new Set(allMuscleGroups)
+    let muscleGroups = ['All', ...dedupedMuscleGroups.values()]
     return muscleGroups.map((muscle_group, index) => 
       <option value={muscle_group} key={index}>{muscle_group}</option>
     )
   }
 
   renderExercises() {
-    let exercises = this.state.exercises
-    return exercises.map((exercise, index) => {
+    let { filteredExercises } = this.state
+    return filteredExercises.map((exercise, index) => {
       return (
         <ExerciseItem
           key={index} 
@@ -44,12 +39,12 @@ export default class ExercisesListPage extends Component {
   }
 
   handleFilterFunctions = (e) => {
-    let allExercises = this.state.exercises
+    let { allExercises } = this.state
     let filter = e.target.value
     if (filter !== "All") {
-    let filteredExercises = allExercises.filter(exercise => exercise.muscle_group === filter)
-    this.setState({ exercises: filteredExercises })
-    } else this.setState({ exercises: allExercises })
+    let filteredResults = allExercises.filter(exercise => exercise.muscle_group === filter)
+    this.setState({ filteredExercises: filteredResults })
+    } else this.setState({ filteredExercises: allExercises })
   }
 
   render() {

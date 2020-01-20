@@ -16,10 +16,10 @@ export default class PlanWorkoutPage extends Component {
   }
 
   updateDayStatus = (e) => {
-    if (e.target.checked) {
-      this.setState({ [e.target.className]: true})
+    if (!e.target.checked) {
+      this.setState({ [e.target.className]: false})
     } else {
-      this.setState({ [e.target.className]: false })
+      this.setState({ [e.target.className]: true })
     }
   }
 

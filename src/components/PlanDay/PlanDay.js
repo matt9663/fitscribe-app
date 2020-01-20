@@ -30,8 +30,9 @@ export default class PlanDay extends Component {
     )
   }
   renderExercises() {
-    const exercises = this.state.exercises
-    if (exercises) {
+    if (this.props.workoutStatus > 0) {
+      const workout = this.context.workouts.find(workout => workout.id === this.props.workoutStatus)
+      const exercises = workout.exercises
       return (
         exercises.map(exercise => 
           <tr className="exercise-row" key={exercise.order}>
@@ -43,8 +44,9 @@ export default class PlanDay extends Component {
           </tr>
         )
       )
-    }
+    } 
   }
+
   handleSelection = (e) => {
     this.setState({ exercises: [{
       order: "", LiftName: "", weight: "", reps: "", sets: ""
@@ -58,8 +60,8 @@ export default class PlanDay extends Component {
   }
 
   handleCompletionToggle = (e) => {
-    if (e.target.checked) {
-      this.setState({ completed: true })
+   if (!e.target.checked) {
+     this.setState({ completed: true })
     } else {
       this.setState({ completed: false })
     }
@@ -69,10 +71,8 @@ export default class PlanDay extends Component {
   render() {
     const day = this.props.day
     const formattedDay = day.toLowerCase()
-    //let workoutStateString = this.props.day.toLowerCase() + '_workout'
-    //let statusStateString = this.props.day.toLowerCase() + '_status'
     const toggleId = 'toggle-completed' + day
-    const dayStatus = this.state.completed ? 'completed' : null   
+    const dayStatus = this.props.statusString ? 'completed' : null   
     return (
       <div className={`plan-day ${dayStatus}`}>
         <header className="plan-day-header">
@@ -83,14 +83,14 @@ export default class PlanDay extends Component {
               id={toggleId} 
               className={formattedDay + '_status'}
               name="toggleCompleted" 
-              checked={this.state.checked} 
+              defaultChecked={this.props.statusString}
               value="Workout Completed" 
-              onChange={this.handleCompletionToggle}/>
+              onClick={this.handleCompletionToggle}/>
             <label htmlFor={toggleId}>Completed</label>
           </form>
         </header>
         <form onChange={this.handleSelection}>
-          <select defaultValue={this.props.workoutStatus} className={formattedDay + '_workout'}> 
+          <select value={!!this.props.workoutStatus ? this.props.workoutStatus : undefined} className={formattedDay + '_workout'}> 
             {this.renderSelections()}
           </select>
         </form>
