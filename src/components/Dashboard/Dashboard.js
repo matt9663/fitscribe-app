@@ -24,12 +24,7 @@ export default class Dashboard extends Component {
             </Link>
           </div>
           <div className="dash_link">
-            <Link to={{
-              pathname: "/workouts",
-              state: {
-                workouts: this.context.workouts
-              }
-            }}>
+            <Link to="/workouts">
               Workouts
             </Link>
           </div>

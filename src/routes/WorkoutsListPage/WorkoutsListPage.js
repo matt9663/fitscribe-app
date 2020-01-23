@@ -2,20 +2,13 @@ import React, { Component } from 'react';
 import './WorkoutsListPage.css';
 import WorkoutItem from '../../components/WorkoutItem/WorkoutItem'
 import { Link } from 'react-router-dom';
-import ExercisesContext from '../../context/ExercisesContext';
-import ExercisesApiService from '../../services/exercises-api-service';
+import WorkoutsContext from '../../context/WorkoutsContext';
 
 
 export default class WorkoutsListPage extends Component {
-  static contextType = ExercisesContext;
-  componentDidMount() {
-    this.context.clearError()
-    ExercisesApiService.getExercises()
-      .then(this.context.setExercises)
-      .catch(this.context.setError)
-  }
+  static contextType = WorkoutsContext;
   renderWorkouts() {
-    const { workouts = [] } = this.props.location.state
+    const { workouts = [] } = this.context
     return workouts.map(workout => 
       <WorkoutItem
         key={workout.id}
@@ -30,15 +23,11 @@ export default class WorkoutsListPage extends Component {
         <div className='WorkoutsList'>
           {this.renderWorkouts()}
         </div>
-        <Link to={{
-          pathname: "/create/workout",
-          state: {
-            exercises: this.context.exercises
-          }
-        }}>
+        <Link to="/create/workout">
           <button type="button" className="add-workout-button">+ Add New Workout</button>
         </Link>
        </section>
      )
    }
 }
+

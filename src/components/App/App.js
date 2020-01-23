@@ -11,13 +11,11 @@ import LoginPage from '../../routes/LoginPage/LoginPage'
 import RegisterUserPage from '../../routes/RegisterUserPage/RegisterUserPage';
 import PublicOnlyRoute from '../../route-validation/PublicOnlyRoute'
 import PrivateRoute from '../../route-validation/PrivateRoute'
-import UserContext from '../../context/UserContext'
 import AddExercisesPage from '../../routes/AddExercisePage/AddExercisePage'
 
 
 
 class App extends Component {
-    static contextType = UserContext
     render() {
       return (
         <div className="App">

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './CreateWorkoutPage.css'
 import WorkoutsContext from '../../context/WorkoutsContext'
 import WorkoutApiService from '../../services/workouts-api-service'
+import ExerciseDatalist from '../../components/ExerciseDatalist/ExerciseDatalist'
 
 export default class CreateWorkoutPage extends Component {
   static contextType = WorkoutsContext
@@ -69,9 +70,11 @@ export default class CreateWorkoutPage extends Component {
                   <span className="order">{order}</span>
                   <label htmlFor="exercise-name">Lift: </label>
                   <input type="text" name={exerciseId} className="liftName" list='exercises' data-id={index} placeholder="Lift name"/>
-                    <datalist id='exercises'>
+                    <ExerciseDatalist />
+                    {
+                    /* <datalist id='exercises'>
                       {this.renderDataListOptions()}
-                    </datalist>
+                    </datalist> */}
                   <label htmlFor="weight">Weight: </label>
                   <input type="text" name={weightId} className="weight" data-id={index} placeholder="Weight"/>
                   <label htmlFor="reps">Reps: </label>

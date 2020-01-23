@@ -20,7 +20,6 @@ export default class AddExercisePage extends Component {
     e.preventDefault()
     let liftName = this.state.liftName
     let group = this.state.group
-    console.log(liftName, '', group)
     ExercisesApiService.postExercise(liftName, group)
       .then(this.handleSubmitSuccess)
       .catch()
