@@ -12,6 +12,7 @@ import RegisterUserPage from '../../routes/RegisterUserPage/RegisterUserPage';
 import PublicOnlyRoute from '../../route-validation/PublicOnlyRoute'
 import PrivateRoute from '../../route-validation/PrivateRoute'
 import UserContext from '../../context/UserContext'
+import AddExercisesPage from '../../routes/AddExercisePage/AddExercisePage'
 
 
 
@@ -53,6 +54,10 @@ class App extends Component {
               <PrivateRoute
                 path='/plan'
                 component={PlanWorkoutPage}
+              />
+              <PrivateRoute
+                path='/create/exercise'
+                component={AddExercisesPage}
               />
             </Switch>
           </main>

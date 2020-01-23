@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 const WorkoutsContext = React.createContext({
   workouts:[],
   error: null,
-  setWeek: () => {},
   setError: () => {},
   clearError: () => {},
   setWorkouts: () => {},

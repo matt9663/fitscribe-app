@@ -18,6 +18,11 @@ export default class CreateWorkoutPage extends Component {
     )
   }
 
+  renderDataListOptions() {
+    let { exercises } = this.props.location.state
+    return exercises.map((exercise, index) =>  <option key={index}>{exercise.liftName}</option>)
+  }
+
   handleWorkoutSubmitSuccess = () => {
     const { history } = this.props
     history.push('/workouts')
@@ -48,6 +53,9 @@ export default class CreateWorkoutPage extends Component {
     let { exercises } = this.state
     return (
       <div className="create-workout-page">
+        <header className='section-header'>
+          <h1>Create New Workout</h1>
+        </header>
         <form onChange={this.handleExerciseChange} onSubmit={this.handleSubmit}>
           <label htmlFor="workout-title">Title: </label>
           <input type="text" name="title" id="workout-title" required/>
@@ -60,7 +68,10 @@ export default class CreateWorkoutPage extends Component {
                 <div key={index} className="exercise-inputs">
                   <span className="order">{order}</span>
                   <label htmlFor="exercise-name">Lift: </label>
-                  <input type="text" name={exerciseId} className="liftName" data-id={index} placeholder="Lift name"/>
+                  <input type="text" name={exerciseId} className="liftName" list='exercises' data-id={index} placeholder="Lift name"/>
+                    <datalist id='exercises'>
+                      {this.renderDataListOptions()}
+                    </datalist>
                   <label htmlFor="weight">Weight: </label>
                   <input type="text" name={weightId} className="weight" data-id={index} placeholder="Weight"/>
                   <label htmlFor="reps">Reps: </label>

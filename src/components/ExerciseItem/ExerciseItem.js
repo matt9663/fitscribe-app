@@ -1,6 +1,12 @@
 import React, { Component } from 'react'
 
 export default class ExerciseItem extends Component {
+  static defaultProps = {
+    exercise: {
+      liftName: '',
+      muscle_group: ''
+    }
+  } 
   render() {
     return (
       <tr className="exercise-item">

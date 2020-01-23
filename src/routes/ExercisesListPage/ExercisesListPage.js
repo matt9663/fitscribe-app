@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ExercisesApiService from '../../services/exercises-api-service'
 import ExerciseItem from '../../components/ExerciseItem/ExerciseItem'
+import { Link } from 'react-router-dom'
 
 
 export default class ExercisesListPage extends Component {
@@ -53,7 +54,7 @@ export default class ExercisesListPage extends Component {
         <header className="filter-section">
           <form className="exercises-filter" onChange={this.handleFilterFunctions}>
             <label htmlFor="filter">Filter: </label>
-            <select>
+            <select id='filter'>
               {this.renderFilterOptions()}
             </select>
           </form>
@@ -67,8 +68,14 @@ export default class ExercisesListPage extends Component {
             {this.renderExercises()}
           </tbody>
         </table>
-        
-        <button type="button" name="add-exercise-button">Add New Exercise</button>
+        <Link to={{
+          pathname: '/create/exercise',
+          state: {
+            exercises: this.state.allExercises
+          }
+        }}>
+          <button type="button" name="add-exercise-button">Add New Exercise</button>
+        </Link>
       </section>
     )
   }
