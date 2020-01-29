@@ -18,17 +18,17 @@ export default class Dashboard extends Component {
   render() {
     return (
         <section className='Dashboard'>
-          <div className="dash_link">
+          <div className="dash_link exercises">
             <Link to="/exercises">
               Exercises
             </Link>
           </div>
-          <div className="dash_link">
+          <div className="dash_link workouts">
             <Link to="/workouts">
               Workouts
             </Link>
           </div>
-          <div className="dash_link">
+          <div className="dash_link plans">
             <Link to="/plan">
               Plan
             </Link>

@@ -2,15 +2,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 3%;
 }
 
 .dash_link {
-  border: 1px solid #dddddd;
   width: 85%;
+  max-width: 608px;
   height: 200px;
   margin: 2% 0;
   display: flex;
   border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.34);
 }
 
 .dash_link a {
@@ -18,4 +20,36 @@
   padding: 80px 0;
   text-align: center;
   align-self: center;
+  color: #dfd5be;
+  font-size: 40px;
+  text-decoration: none;
+  font-family: 'Bebas Neue'
+}
+
+.exercises {
+  background: 
+    linear-gradient(to right,
+      #2a3c4d73,
+      #2a3c4d93,
+      transparent
+    ),
+    url(https://user-images.githubusercontent.com/51541006/73115582-f1b61700-3f1f-11ea-8814-ddaf6687159f.jpg) center
+}
+.workouts {
+  background: 
+    linear-gradient(to right,
+      #2a3c4d73,
+      #2a3c4d93,
+      transparent
+    ),
+    url(https://user-images.githubusercontent.com/51541006/73115618-83258900-3f20-11ea-8f47-ea446b75f6c7.jpg) center
+}
+.plans {
+  background: 
+    linear-gradient(to right,
+      #2a3c4d73,
+      #2a3c4d93,
+      transparent
+    ),
+    url(https://user-images.githubusercontent.com/51541006/73115644-cda70580-3f20-11ea-8e15-61bf9d29595c.jpg) center
 }

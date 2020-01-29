@@ -57,8 +57,11 @@ export default class PlanWorkoutPage extends Component {
   render() {
     return (
       <section className="plan-workout-page">
-        {this.renderDays()}
-        <button className='update-week-button' onClick={this.submitUpdate}>Update Your Week</button>
+        <div className='week-wrapper'>
+          {this.renderDays()}
+          <button className='update-week-button' onClick={this.submitUpdate}>Update Your Week</button>
+        </div>
+        
       </section>
     )
   }

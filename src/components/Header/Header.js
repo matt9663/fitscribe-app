@@ -36,9 +36,6 @@ export default class Header extends Component {
   renderUnloggedHeader() {
     return (
       <div className='nav-functions unlogged'>
-        <Link to='/demo'>
-          About
-        </Link>
         {' '}
         <Link to='/login'>
           Login

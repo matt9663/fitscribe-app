@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ExercisesApiService from '../../services/exercises-api-service'
 import ExerciseItem from '../../components/ExerciseItem/ExerciseItem'
 import { Link } from 'react-router-dom'
+import './ExercisesListPage.css'
 
 
 export default class ExercisesListPage extends Component {
@@ -51,31 +52,37 @@ export default class ExercisesListPage extends Component {
   render() {
     return (
       <section className="exercise-list">
-        <header className="filter-section">
+        <header className="functions-section">
+          <Link to={{
+            pathname: '/create/exercise',
+            state: {
+              exercises: this.state.allExercises
+            }
+          }}>
+            <button type="button" className="add-exercise-button">
+              <i id="add-exercise-icon" className ="fas fa-plus-circle"></i> 
+              Add New Exercise
+            </button>
+          </Link>
           <form className="exercises-filter" onChange={this.handleFilterFunctions}>
-            <label htmlFor="filter">Filter: </label>
+            <label htmlFor="filter" value="filter"><i id="filter" className="fas fa-filter"></i></label>
             <select id='filter'>
               {this.renderFilterOptions()}
             </select>
           </form>
         </header>
+        <div className='exercise-list-wrapper'>
         <table>
           <tbody>
             <tr>
-              <th>Exercise</th>
-              <th>Group</th>
+              <th className="exercises-tr-left">Exercise</th>
+              <th className="exercises-tr-right">Group</th>
             </tr>
             {this.renderExercises()}
           </tbody>
         </table>
-        <Link to={{
-          pathname: '/create/exercise',
-          state: {
-            exercises: this.state.allExercises
-          }
-        }}>
-          <button type="button" name="add-exercise-button">Add New Exercise</button>
-        </Link>
+        </div>
+        
       </section>
     )
   }

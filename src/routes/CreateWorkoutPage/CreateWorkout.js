@@ -54,39 +54,47 @@ export default class CreateWorkoutPage extends Component {
     let { exercises } = this.state
     return (
       <div className="create-workout-page">
-        <header className='section-header'>
-          <h1>Create New Workout</h1>
-        </header>
-        <form onChange={this.handleExerciseChange} onSubmit={this.handleSubmit}>
-          <label htmlFor="workout-title">Title: </label>
-          <input type="text" name="title" id="workout-title" required/>
-          <button type="button" onClick={this.addExercise}>Add Exercise</button>
-          {
-            exercises.map((val, index) => {
-              let order = index + 1
-              let exerciseId = `exercise-${index}`, weightId = `weight-${index}`, repId = `reps-${index}`, setsId = `sets-${index}`
-              return (
-                <div key={index} className="exercise-inputs">
-                  <span className="order">{order}</span>
-                  <label htmlFor="exercise-name">Lift: </label>
-                  <input type="text" name={exerciseId} className="liftName" list='exercises' data-id={index} placeholder="Lift name"/>
-                    <ExerciseDatalist />
-                    {
-                    /* <datalist id='exercises'>
-                      {this.renderDataListOptions()}
-                    </datalist> */}
-                  <label htmlFor="weight">Weight: </label>
-                  <input type="text" name={weightId} className="weight" data-id={index} placeholder="Weight"/>
-                  <label htmlFor="reps">Reps: </label>
-                  <input type="number" name={repId} className="reps" data-id={index} placeholder="# reps"/>
-                  <label htmlFor="sets">Sets: </label>
-                  <input type="number" name={setsId} className="sets" data-id={index} placeholder="# sets"/>
-                </div>
-              )
-            })
-          }
-          <input type="submit" value="Save Workout" />
-        </form>
+        <div className='form-wrapper'>
+          <header className='section-header'>
+            <h1>Create New Workout</h1>
+          </header>
+          <form className='create-workout-form' onChange={this.handleExerciseChange} onSubmit={this.handleSubmit}>
+            <label htmlFor="workout-title">Title: </label>
+            <input type="text" name="title" id="workout-title" placeholder='Workout name' required/>
+            
+            {
+              exercises.map((val, index) => {
+                let order = index + 1
+                let exerciseId = `exercise-${index}`, weightId = `weight-${index}`, repId = `reps-${index}`, setsId = `sets-${index}`
+                return (
+                  <div key={index} className="exercise-inputs">
+                    
+                    <div className='inputs-wrapper'>
+                      <div className='big-inputs-wrapper'>
+                      <span className="order">{order}</span>
+                      <label htmlFor="exercise-name">Lift: </label>
+                      <input type="text" name={exerciseId} className="liftName" list='exercises' data-id={index} placeholder="Lift name"/>
+                        <ExerciseDatalist />
+                      </div>                      
+                      <div className='little-inputs-wrapper'>
+                        <label htmlFor="weight">Weight: </label>
+                        <input type="text" name={weightId} className="weight" data-id={index} placeholder="Weight"/>
+                        <label htmlFor="reps">Reps: </label>
+                        <input type="number" name={repId} className="reps" data-id={index} placeholder="# reps"/>
+                        <label htmlFor="sets">Sets: </label>
+                        <input type="number" name={setsId} className="sets" data-id={index} placeholder="# sets"/>
+                      </div>
+                    </div>
+                  </div>
+                )
+              })
+            }
+            <div className='form-buttons'>
+              <button type="button" onClick={this.addExercise}><i id="add-exercise-icon" className ="fas fa-plus-circle"></i>Add Exercise</button>
+              <button type="submit"><i id='save-icon' className="far fa-save"></i>Save Workout</button>
+            </div>
+          </form>
+        </div>
       </div>
     )
   }

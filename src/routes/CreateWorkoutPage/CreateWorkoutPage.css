@@ -1,46 +1,159 @@
-form {
-  display: flex;
-  flex-direction: column;
-  width: 90%;
-  align-items: center;
+.create-workout-page {
+  font-family: 'Barlow Condensed';
+  padding-top: 3%;
 }
 
+.form-wrapper {
+  margin: 0 auto;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.25);
+  background: rgb(245, 249, 250);
+  border-radius: 6px;
+  border-top: 4px solid #E74C3C;
+  width: 90%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+.create-workout-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+
+}
+label {
+  display: none;
+}
+
+.create-workout-form > input[type='text'] {
+  font-family: 'Barlow Condensed';
+  font-size: 18px;
+  border: 2px solid #dddddd;
+  padding: 0.5%;
+  margin-bottom: 2%;
+}
 .exercise-inputs {
   display: flex;
   width: 100%
 }
 
-.exercise-inputs > input {
-  margin: 2% 2%;
+.inputs-wrapper {
+  margin: 0 2%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.big-inputs-wrapper {
+  display: inline;
+  width: 60%;
+}
+
+.big-inputs-wrapper > input {
+  margin: 2% 1%;
   border: 2px solid #dddddd;
   padding: 1%;
+  font-family: 'Barlow Condensed';
+}
+
+.little-inputs-wrapper {
+  width: 40%;
+  min-width: 250px;
+}
+
+.little-inputs-wrapper > input {
+  margin: 2% 1%;
+  border: 2px solid #dddddd;
+  padding: 1%;
+  font-family: 'Barlow Condensed';
 }
 
 .exercise-inputs > span {
   margin: 2% 0;
-  padding: 1%
-}
-
-.exercise-inputs > input::placeholder {
-  font-size: 12px;
-}
-
-.exercise-inputs > label {
-  display: none;
+  padding: 1%;
+  font-family: 'Barlow Condensed';
 }
 
 .liftName {
-  width: 70%
+  width: 90%
 }
 .weight {
-  width: 20%;
+  width: 30%;
 }
 .reps {
-  width: 45px;
+  width: 20%;
+  min-width: 45px;
 }
 .sets {
-  width: 45px;
+  width: 20%;
+  min-width: 45px;
 }
 .order {
-  width: 30px
+  width: 3%;
+  max-width: 30px
+}
+.form-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+.form-buttons > button {
+  width: 40%;
+  min-width: 150px;
+  border-radius: 3px;
+  border: .5px solid grey;
+  padding: 2%;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: .05em;
+  font-family: 'Barlow Condensed';
+  background: #364c61;
+  color: #fafbfb;
+  box-sizing: border-box;
+  margin: 2% 3%;
+}
+
+#save-icon {
+  margin-right: 2%;
+}
+
+@media only screen and (max-width: 724px) {
+  .exercise-inputs {
+    justify-content: center;
+  }
+
+  .inputs-wrapper {
+     justify-content: center;
+  }
+  .little-inputs-wrapper {
+    display: flex;
+    width: 90%;
+    justify-content: center;
+  }
+  .big-inputs-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 90%
+  }
+  .liftName {
+    width: 85%
+  }
+  .order {
+    width: 5%;
+    align-self: center;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .form-buttons > button {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .form-buttons > button {
+    padding: 1%;
+  }
 }

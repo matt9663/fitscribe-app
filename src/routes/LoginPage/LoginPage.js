@@ -21,9 +21,13 @@ export default class LoginPage extends Component {
  render() {
     return (
       <section className="login-page">
-        <h2>Account Login</h2>
-          <LoginForm onLoginSuccess={this.handleLoginSuccess} updateLoggedInStatus={this.props.updateLoggedInStatus}/>
-        <p>Don't have an account? <span className='register-link'><Link to='/register'>Click Here</Link></span> to register!</p>
+        <div className='login-wrapper'>
+          <h2>Account Login</h2>
+            <LoginForm onLoginSuccess={this.handleLoginSuccess} updateLoggedInStatus={this.props.updateLoggedInStatus}/>
+            <div className='sign-up-wrapper'>
+              <p>Don't have an account? <span className='register-link'><Link to='/register'>Sign up</Link></span></p>
+            </div>
+        </div>
       </section>
     )
   }

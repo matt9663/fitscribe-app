@@ -24,7 +24,7 @@ export default class WorkoutsListPage extends Component {
           {this.renderWorkouts()}
         </div>
         <Link to="/create/workout">
-          <button type="button" className="add-workout-button">+ Add New Workout</button>
+          <button type="button" className="add-workout-button"><i className ="fas fa-plus-circle"></i> Add New Workout</button>
         </Link>
        </section>
      )

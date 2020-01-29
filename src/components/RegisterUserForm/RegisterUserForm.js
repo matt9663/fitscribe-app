@@ -42,24 +42,28 @@ export default class RegisterUserForm extends Component {
     const { error } = this.state
     return (
       <form className="register-user-form" onSubmit={this.handleSubmit}>
-        <div role="alert">{error && <p className="form-error" role='alert'>{error}</p>}</div>
+        {error && 
+          <div className='form-error' role='alert'> 
+            <i className="fas fa-exclamation-circle"></i>
+            <p className='error-message'>{error}</p>
+          </div>}
         <div className="userName group">
           <label htmlFor='userName'>Username: </label>
-          <input type="text" name="userName" placeholder="User Name" required/>
+          <input type="text" name="userName" placeholder="User Name"/>
         </div>
         <div className="emailAddress group">
           <label htmlFor='emailAddress'>Email </label>
-          <input type="text" name="email_address" placeholder="Email" required/>
+          <input type="text" name="email_address" placeholder="Email"/>
         </div>
         <div className="password group">
           <label htmlFor="password">Password: </label>
-          <input type="password" name="password" placeholder="Password" required/>
+          <input type="password" name="password" placeholder="Password" />
         </div>
         <div className="password group">
           <label htmlFor="re-enter-password">Password: </label>
-          <input type="password" name="check_password" placeholder="Re-enter Password" required/>
+          <input type="password" name="check_password" placeholder="Re-enter Password" />
         </div>
-        <input type="submit" value="Submit"/>
+        <input type="submit" value="Create New Account"/>
       </form>
     )
   }

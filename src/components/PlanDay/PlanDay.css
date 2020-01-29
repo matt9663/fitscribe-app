@@ -1,12 +1,24 @@
 .plan-day {
-  border: 1px solid #dddddd;
+  border: .5px solid #dddddd;
   border-radius: 5px;
   width: 90%;
   margin: 3% 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 4%;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.25);
+  background: #ef867b;
+  color: #344455
 }
+
 
 .completed {
   background-color: rgba(215, 250, 215, 0.863);
+}
+
+.completed > header > h1 {
+  text-decoration: line-through;
 }
 
 .plan-day-header {
@@ -16,11 +28,94 @@
   align-items: center;
   margin: 0% 3%;
   width: 94%;
+  font-family: 'Bebas Neue';
+}
+
+.plan-day-header > h1 {
+  font-size: 40px;
+  letter-spacing: .3rem;
+  margin: 2% 0;
+}
+
+.completed-toggle-form {
+  display:flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 60%
+}
+
+.completed-label {
+  margin-right: 3%;
 }
 
 .completed-toggle {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 30px;
+  background-color: rgb(180, 180, 180);
+  border-radius: 20px;
+}
+
+.completed-toggle::after {
+  content: '';
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: white;
+  top: 1px;
+  left: 2px;
+  transition: all 0.3s;
+}
+
+input[type='checkbox']:checked + .completed-toggle::after {
+  left: 20px;
+}
+
+input[type='checkbox']:checked + .completed-toggle {
+  background-color: #1d6fa6;
+}
+input[type='checkbox'] {
+  display: none;
+}
+
+.workout-toggle {
+  width: 40%;
+  margin-bottom: 3%;
+}
+.workout-toggle > select {
+  font-family: 'Barlow Condensed';
+  width: 100%;
+  font-size: 16px;
+}
+
+.workout-toggle > select > option {
+  font-family: 'Barlow Condensed';
+  font-size: 16px;
+}
+ .exercises-table {
+   width: 90%;
+ }
+
+ .exercises-table > table > tbody > tr > th:first-child {
+  border-top-left-radius: 5px;
+ }
+
+ .exercises-table > table > tbody > tr> th:last-child {
+  border-top-right-radius: 5px;
+ }
+
+  .update-week-button {
+  width: 90%;
+  border-radius: 3px;
+  border: .5px solid grey;
+  padding: 2%;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: .05em;
+  font-family: 'Barlow Condensed';
+  background: #364c61;
+  color: #fafbfb;
+  box-sizing: border-box;
 }

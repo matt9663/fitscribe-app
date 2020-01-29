@@ -77,7 +77,8 @@ export default class PlanDay extends Component {
       <div className={`plan-day ${dayStatus}`}>
         <header className="plan-day-header">
           <h1>{day}</h1>
-          <form className="completed-toggle">
+          <form className="completed-toggle-form">
+            <span className='completed-label'>Completed:</span>
             <input 
               type="checkbox" 
               id={toggleId} 
@@ -86,15 +87,16 @@ export default class PlanDay extends Component {
               defaultChecked={this.props.statusString}
               value="Workout Completed" 
               onClick={this.handleCompletionToggle}/>
-            <label htmlFor={toggleId}>Completed</label>
+              
+            <label className='completed-toggle' htmlFor={toggleId}><span className="sliding-groove"></span></label>
           </form>
         </header>
-        <form onChange={this.handleSelection}>
+        <form className='workout-toggle' onChange={this.handleSelection}>
           <select value={!!this.props.workoutStatus ? this.props.workoutStatus : undefined} className={formattedDay + '_workout'}> 
             {this.renderSelections()}
           </select>
         </form>
-        <div className="exercises">
+        <div className="exercises-table">
         <table>
           <tbody>
             <tr>

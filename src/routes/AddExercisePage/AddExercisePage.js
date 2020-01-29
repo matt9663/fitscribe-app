@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './AddExercisePage.css'
 import ExercisesApiService from '../../services/exercises-api-service'
 
 export default class AddExercisePage extends Component {
@@ -34,19 +35,23 @@ export default class AddExercisePage extends Component {
   render() {
     return (
       <div className='add-exercise-page'>
+        <div className="section-wrapper">
         <header className='section-header'>
           <h1>Add New Exercise</h1>
         </header>
-        <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
-          <label htmlFor='liftName'>Lift Name:</label>
-          <input type='text' name="liftName" id='liftName' placeholder='Lift name' required/>
-          <label htmlFor='muscle_group'>Group:</label>
-          <select name='group' id='muscle_group' defaultValue='Select group' required>
-            <option></option>
-            {this.renderMuscleGroupOptions()}
-          </select>
-          <input type='submit' value='Add Exercise'/>
+        <form className="add-exercise-form" onChange={this.handleChange} onSubmit={this.handleSubmit}>
+          <div className="inputs">
+            <label htmlFor='liftName'>Lift Name:</label>
+            <input type='text' name="liftName" id='liftName' placeholder='Lift name' required/>
+            <label htmlFor='muscle_group'>Group:</label>
+            <select name='group' id='muscle_group' defaultValue='Select group' required>
+              <option value="" required>Group: </option>
+              {this.renderMuscleGroupOptions()}
+            </select>
+          </div>
+          <input className="submit-button" type='submit' value='Add Exercise'/>
         </form>
+        </div>
       </div>
     )
   }

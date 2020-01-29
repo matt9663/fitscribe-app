@@ -1,0 +1,99 @@
+.section-header > h1 {
+  margin-top: 0;
+  font-family: 'Barlow Condensed';
+  text-align: center;
+}
+
+.add-exercise-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-right: 0;
+  box-sizing: border-box;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.inputs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 80%;
+}
+.inputs > label {
+  display: none;
+}
+
+.inputs > #liftName {
+  width: 100%;
+  margin: 0;
+  padding: 1%;
+  border-radius: 3px;
+  border: .5px solid grey;
+  font-size: 20px;
+  font-family: 'Barlow Condensed';
+  box-sizing: border-box;
+  letter-spacing: .03em;
+}
+.inputs > #muscle_group {
+  font-family: 'Barlow Condensed';
+  padding: 1%;
+  margin: 3% 0;
+  width: 50%;
+  font-size: 20px;
+}
+.section-wrapper {
+  padding-top: 3%;
+  padding-bottom: 3%;
+  border-top: 4px solid #E74C3C;
+  border-radius: 6px;
+  width: 90%;
+  margin: 0 auto;
+  background: rgb(245, 249, 250);
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.25);
+}
+
+.add-exercise-page {
+  margin: 0 auto;
+  padding: 5% 0;
+  font-family: 'Barlow Condensed';
+  letter-spacing: .03em;
+  color: #344455
+}
+
+.submit-button {
+  width: 80%;
+  border-radius: 3px;
+  align-self: center;
+  border: .5px solid grey;
+  padding: 2%;
+  font-size: 20px;
+  font-weight: 400;
+  font-family: 'Barlow Condensed';
+  background: #364c61;
+  color: #fafbfb;
+  box-sizing: border-box;
+  margin-top: 2%;
+  letter-spacing: .05em;
+}
+
+@media only screen and (min-width: 450px) {
+  .inputs > #liftName {
+    width: 60%;
+    
+  }
+  .inputs > #muscle_group {
+    width: 37%;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 3%;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .add-exercise-page {
+    height: 100vh;
+  }
+  .section-wrapper {
+    margin-top: 30vh;
+  }
+}

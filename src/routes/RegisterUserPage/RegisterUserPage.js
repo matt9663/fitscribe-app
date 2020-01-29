@@ -16,8 +16,10 @@ export default class RegisterUserPage extends Component {
   render() {
     return (
       <section className="register-user-page">
-        <h2>Register New Account</h2>
-        <RegisterUserForm handleRegistrationSucces={this.handleRegistrationSucces}/>
+        <div className='register-wrapper'>
+          <h2>Register New Account</h2>
+          <RegisterUserForm handleRegistrationSucces={this.handleRegistrationSucces}/>
+        </div>
       </section>
     )
   }
