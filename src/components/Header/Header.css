@@ -31,6 +31,8 @@
 
 .Header a:hover {
   cursor: pointer;
+  color: #dbab3a;
+  transition: .15s;
 }
 
 .nav-functions {
@@ -65,4 +67,21 @@
     margin-left: 0%;
     margin: 8% 0;
   }
+}
+
+@media only screen and (max-width: 450px) {
+  .Header > h1 {
+    font-size: 28px;
+  } 
+  .nav-functions {
+    font-size: 14px;
+  }
+}
+@media only screen and (min-width: 650px) {
+.Header > h1 {
+  font-size: 40px;
+} 
+.nav-functions {
+  font-size: 24px;
+}
 }

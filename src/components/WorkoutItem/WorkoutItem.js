@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import './WorkoutItem.css'
 
 export default class WorkoutItem extends Component {
+  static defaultProps = {
+    title: '',
+    exercises: []
+  }
   renderExercises() {
     const exercises = this.props.exercises
     return exercises.map(exercise => 

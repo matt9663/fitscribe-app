@@ -12,3 +12,16 @@
   align-items: center;
   justify-content: center;
 }
+
+.update-week-button {
+  transition: .2s;
+}
+
+.update-week-button:hover {
+  cursor: pointer;
+  background-color: #263544;
+}
+
+.update-week-button:active {
+  transform: translateY(4px);
+}

@@ -25,7 +25,9 @@
   font-size: 30px;
   font-weight: bold;
 }
-
+.login-wrapper > p {
+  margin-top: 0;
+}
 .sign-up-wrapper {
   background: rgb(213, 217, 218);
   width: 100%;
@@ -43,12 +45,17 @@
   text-decoration: underline;
 }
 
+.app-summary {
+  padding: 0 10%;
+  text-align: center;
+}
+
 @media only screen and (min-width: 900px) {
   .login-page {
     height: 100vh;
   }
 
   .login-wrapper {
-    margin-top: 16vh;
+    margin-top: 12vh;
   }
 }

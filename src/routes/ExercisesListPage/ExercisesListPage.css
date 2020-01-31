@@ -43,7 +43,18 @@
   color: #fafbfb;
   box-shadow: 0px 4px 8px rgba(0,0,0,0.25);
   border: 0;
+  transition: .2s;
 }
+
+.add-exercise-button:hover {
+  cursor: pointer;
+  background-color: #263544;
+}
+
+.add-exercise-button:active {
+  transform: translateY(4px);
+}
+
 
 .exercises-tr-left {
   border-top-left-radius: 5px;

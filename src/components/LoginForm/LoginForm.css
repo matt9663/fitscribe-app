@@ -43,6 +43,15 @@
   box-sizing: border-box;
 }
 
+input[type=submit]:hover {
+  background-color: #263544;
+  cursor: pointer;
+}
+
+input[type=submit]:active {
+  transform: translateY(4px);
+}
+
 .form-error {
   display: flex;
   flex-direction: row;

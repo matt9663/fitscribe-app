@@ -6,6 +6,13 @@ import WorkoutApiService from '../../services/workouts-api-service'
 
 export default class PlanDay extends Component {
   static contextType = WorkoutsContext
+  static defaultProps = {
+    day: '',
+    updateDayStatus: '',
+    updateDayWorkout: '',
+    workoutStatus: '',
+    statusString: ''
+  }
   constructor(props) {
     super(props);
     this.state = {
@@ -15,8 +22,8 @@ export default class PlanDay extends Component {
       }],
       completed: this.props.statusString
     }
-
   }
+  
   componentDidMount() {
     this.context.clearError()
     WorkoutApiService.getWorkouts()
