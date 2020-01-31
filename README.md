@@ -2,7 +2,7 @@
 
 ## [Live Link](https://matt9663-fitscribe-app.now.sh/)
 
-This repo conatins all the files for the client of my FitScribe site, built using React. The goal of this site is to create an easy-to-use platform for users to build and plan workout routines. This app connects with a Node/Express server, which pulls data from a PostgreSQL database.
+This repo conatins all the files for the client of my FitScribe site, built using React. The goal of this site is to create an easy-to-use platform for users to build and plan workout routines. This app connects with a Node/Express server, which pulls data from a PostgreSQL database. [Server repo](https://github.com/matt9663/fitscribe-server). User authentication utilizes password encryption and JWT auth tokens for security. 
 
 The current version has 3 distinct sections: Exercises, Workouts, and Plan:
 

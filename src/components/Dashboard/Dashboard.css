@@ -2,13 +2,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 3%;
+  justify-content: center;
+  height: 93vh
 }
 
 .dash_link {
   width: 85%;
-  max-width: 608px;
-  height: 200px;
+  height: 20vh;
   margin: 2% 0;
   display: flex;
   border-radius: 10px;
@@ -25,36 +25,43 @@
   padding: 80px 0;
   text-align: center;
   align-self: center;
-  color: #dfd5be;
+  color: #dbb355;
   font-size: 40px;
   text-decoration: none;
-  font-family: 'Bebas Neue'
+  font-family: 'Bebas Neue';
+  text-shadow: 1px 1px 0 rgba(77, 77, 77, 0.644)
+}
+.exercises {
+  background-image: url(https://user-images.githubusercontent.com/51541006/73115582-f1b61700-3f1f-11ea-8814-ddaf6687159f.jpg);
+  background-size: cover;
+  background-color: #2a3c4d85;
+  background-blend-mode: luminosity;
+  background-position: center;
 }
 
-.exercises {
-  background: 
-    linear-gradient(to right,
-      #2a3c4d73,
-      #2a3c4d93,
-      transparent
-    ),
-    url(https://user-images.githubusercontent.com/51541006/73115582-f1b61700-3f1f-11ea-8814-ddaf6687159f.jpg) center
-}
 .workouts {
-  background: 
-    linear-gradient(to right,
-      #2a3c4d73,
-      #2a3c4d93,
-      transparent
-    ),
-    url(https://user-images.githubusercontent.com/51541006/73115618-83258900-3f20-11ea-8f47-ea446b75f6c7.jpg) center
+  background-image: url(https://user-images.githubusercontent.com/51541006/73115618-83258900-3f20-11ea-8f47-ea446b75f6c7.jpg);
+  background-size: cover;
+  background-color: #2a3c4d85;
+  background-blend-mode: luminosity;
+  background-position: center;
 }
 .plans {
-  background: 
-    linear-gradient(to right,
-      #2a3c4d73,
-      #2a3c4d93,
-      transparent
-    ),
-    url(https://user-images.githubusercontent.com/51541006/73115644-cda70580-3f20-11ea-8e15-61bf9d29595c.jpg) center
+  background-image: url(https://user-images.githubusercontent.com/51541006/73115644-cda70580-3f20-11ea-8e15-61bf9d29595c.jpg);
+  background-size: cover;
+  background-color: #2a3c4d85;
+  background-blend-mode: luminosity;
+  background-position: center;
+}
+
+@media only screen and (min-width: 900px) {
+  .Dashboard {
+    height: 100vh;
+  }
+  .dash_link {
+    height: 25vh;
+  }
+  .dash_link > a {
+    font-size: 54px;
+  }
 }
