@@ -44,11 +44,11 @@ export default class LoginForm extends Component {
           </div>}
           <div className="userName group">
             <label htmlFor='userName'>Username: </label>
-            <input type="text" name="userName" placeholder="User Name" />
+            <input type="text" name="userName" placeholder="User Name" required/>
           </div>
           <div className="password group">
             <label htmlFor="password">Password: </label>
-            <input type="password" name="password" placeholder="Password"/>
+            <input type="password" name="password" placeholder="Password" required/>
           </div>
           <input type="submit" value="Sign In"/>
       </form>

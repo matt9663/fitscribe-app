@@ -1,20 +1,20 @@
 .plan-workout-page {
-  margin: 0 3%;
-  margin-bottom: 20px;
+  margin: 0 1%;
+  padding-bottom: 20px;
   box-sizing: border-box;
 }
 
 .week-wrapper {
   margin-top: 0;
-  padding: 1%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-bottom: 3%;
 }
 
 .update-week-button {
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .update-week-button:hover {
@@ -24,4 +24,13 @@
 
 .update-week-button:active {
   transform: translateY(4px);
+}
+
+@media only screen and (min-width: 600px) {
+  .plan-workout-page {
+    margin: 0 3%;
+  }
+  .week-wrapper {
+    padding: 0 5%;
+  }
 }
